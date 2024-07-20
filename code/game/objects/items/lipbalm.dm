@@ -34,7 +34,7 @@
 
 /obj/item/lipbalm/examine(mob/user)
 	. = ..()
-	. += span_notice("<i>You can use it in hand to [opened ? "close" : "open"] the lid.</i>")
+	. += span_notice("You can use it in hand to [opened ? "close" : "open"] the lid.")
 	if(!opened)
 		. += span_notice("<i>You could take the lid off to see how much balm is left.</i>")
 	else
@@ -47,7 +47,7 @@
 		else if (uses == 1)
 			. += span_notice("<i>The plastic base is partially visible, but there's a small amount of balm left.</i>")
 		else
-			. += span_notice("<i>The plastic base of the tube is at the top, there's nothing left.</i>")
+			. += span_warning("<i>The plastic base is at the top of the tube, there's nothing left.</i>")
 
 /obj/item/lipbalm/attack_self(mob/user)
 	to_chat(user, span_notice("You [opened ? "place" : "remove"] the lid on the [src]."))
